@@ -1,0 +1,31 @@
+{
+	"type": "parsons-puzzle",
+	"taskId": "parsons-puzzle-1664439825",
+	"source": {
+		"name": "Summative Assessment #2",
+		"showName": false,
+		"instructions": "Drag the appropriate code blocks below so that it creates a playbook that accomplishes the following:\n - The task should copy the course file `/path/to/nginx.conf` to the destination `/etc/nginx/nginx.conf`\n - The task should trigger the `Restart Ngnix` handler when the task completes\n - The handler `Restart Nginx`, defined separately in the playbook, specifies the name of the service as `nginx` and sets its state to `restarted`, which will restart the service if it is running (or start it if it is not).",
+		"initial": "tasks:\n  - name: Copy Nginx config file\\n  ansible.builtin.copy:\n      src: /path/to/nginx.conf\\ndest: /etc/nginx/nginx.conf\n    notify:\n      - Restart Nginx\nhandlers:\n  - name: Restart Nginx\\n  ansible.builtin.service:\n      name: nginx\\nstate: restarted\n- Reload Nginx#distractor\nname: nginx\\ndaemon_reload: yes#distractor",
+		"options": "{\"sortableId\":\"sortable\",\"max_wrong_lines\":10,\"exec_limit\":2500,\"can_indent\":true,\"x_indent\":20,\"lang\":\"en\",\"show_feedback\":true,\"trashId\":\"sortableTrash\"}",
+		"grader": "1",
+		"guidance": "Here is the correctly formatted playbook:\n```yaml-hide-clipboard\ntasks:\n  - name: Copy Nginx config file\n    ansible.builtin.copy:\n      src: /path/to/nginx.conf\n      dest: /etc/nginx/nginx.conf\n    notify:\n      - Restart Nginx\nhandlers:\n  - name: Restart Nginx\n    ansible.builtin.service:\n      name: nginx\n      state: restarted\n```\n\nAs stated in the prompt:\n - The task should trigger the `Restart Ngnix` handler when the task completes\n   - The handler is named `Restart Ngnix`, so this name *must* be used in order to successfully notify the handler (using `Reload Ngnix` will not notify this handler)\n\nAs discussed in this module, the `service` module is used to manage services (like Nginx) in Ansible.\n - `daemon_reload` is a parameter of the `systemd` module. While `daemon_reload` can be used in handlers, it can only be used to reload Systemd configurations.",
+		"showGuidanceAfterResponseOption": {
+			"type": "Attempts",
+			"passedFrom": 3
+		},
+		"maxAttemptsCount": 3,
+		"points": 20,
+		"metadata": {
+			"tags": [
+				{
+					"name": "Assessment Type",
+					"value": "Parsons Puzzle"
+				}
+			],
+			"files": [],
+			"opened": []
+		},
+		"bloomsObjectiveLevel": "",
+		"learningObjectives": ""
+	}
+}

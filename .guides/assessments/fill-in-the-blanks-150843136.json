@@ -1,0 +1,77 @@
+{
+	"type": "fill-in-the-blanks",
+	"taskId": "fill-in-the-blanks-150843136",
+	"source": {
+		"name": "Summative Assessment #4",
+		"showName": false,
+		"instructions": "Complete the Ansible playbook below so that its task utilizes the `systemd` module to ensure the nginx service is running on all hosts in the `web_servers` group.\n\n - Your playbook should use the appropriate directive with elevated privileges in order to interact with the Systemd system.\n - The task should start the service if it's not already running, and ensure it's enabled to start on boot. \n - Lastly, a reload of the Systemd configuration with the updated file should be triggered to apply any changes to the service file.",
+		"showValues": false,
+		"text": "```yaml-hide-clipboard\n- name: Restart nginx service\n  <<<hosts>>>: <<<web_servers>>>\n  <<<become>>>: true\n  <<<tasks>>>:\n    - name: Ensure nginx service is running\n      ansible.builtin.<<<systemd>>>:\n        <<<name>>>: nginx\n        <<<state>>>: <<<started>>>\n        <<<enabled>>>: <<<true>>>\n        <<<daemon_reload>>>: <<<yes>>>\n",
+		"distractors": "",
+		"guidance": "This playbook will ensure that the nginx service is running on all hosts in the `web_servers group`, using the `systemd` module. \n\nThe `become: true` directive is used to run the tasks with elevated privileges (i.e., as root), which is necessary to interact with the Systemd system.\n\nThe task will use the `systemd` module to:\n- Start the service if it is not already running with the parameter `state: started`\n- `enabled: true` ensure that it is enabled to start on boot\n- The parameter `daemon_reload: yes` is required to reload Systemd because it is specified that we need to reload after changes to the service file.",
+		"showGuidanceAfterResponseOption": {
+			"type": "Attempts",
+			"passedFrom": 3
+		},
+		"maxAttemptsCount": 3,
+		"showExpectedAnswer": true,
+		"points": 20,
+		"arePartialPointsAllowed": true,
+		"metadata": {
+			"tags": [
+				{
+					"name": "Assessment Type",
+					"value": "Fill in the Blanks"
+				}
+			],
+			"files": [],
+			"opened": []
+		},
+		"bloomsObjectiveLevel": "",
+		"learningObjectives": "",
+		"tokens": {
+			"blank": [
+				"hosts",
+				"web_servers",
+				"become",
+				"tasks",
+				"systemd",
+				"name",
+				"state",
+				"started",
+				"enabled",
+				"true",
+				"daemon_reload",
+				"yes"
+			],
+			"text": [
+				"```yaml-hide-clipboard\n- name: Restart nginx service\n  ",
+				0,
+				": ",
+				0,
+				"\n  ",
+				0,
+				": true\n  ",
+				0,
+				":\n    - name: Ensure nginx service is running\n      ansible.builtin.",
+				0,
+				":\n        ",
+				0,
+				": nginx\n        ",
+				0,
+				": ",
+				0,
+				"\n        ",
+				0,
+				": ",
+				0,
+				"\n        ",
+				0,
+				": ",
+				0,
+				"\n"
+			],
+			"regexPositions": []
+		}
+	}
+}

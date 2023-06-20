@@ -1,0 +1,22 @@
+{
+	"allowGuideClose": false,
+	"collapsedOnStart": false,
+	"hideBackToDashboard": false,
+	"hideMenu": true,
+	"hideSectionsToggle": false,
+	"lexikonTopic": "",
+	"order": [
+		"Summative-Assessment--1-300b",
+		"Summative-Assessment--2-117b",
+		"Summative-Assessment--3-7920",
+		"Summative-Assessment--4-c2f8",
+		"Summative-Assessment--5-7cf3"
+	],
+	"protectLayout": true,
+	"scripts": [],
+	"suppressPageNumbering": true,
+	"theme": "light",
+	"title": "Coding Exercises",
+	"useMarkAsComplete": true,
+	"useSubmitButtons": true
+}

@@ -1,0 +1,70 @@
+{
+	"type": "multiple-choice",
+	"taskId": "multiple-choice-1013254303",
+	"source": {
+		"name": "Summative Assessment #1",
+		"showName": false,
+		"instructions": "Which of the following statements about Ansible modules are true? \n\n**Select all that apply.**",
+		"multipleResponse": true,
+		"isRandomized": true,
+		"answers": [
+			{
+				"_id": "f919c20e-ee39-bdd8-d64f-4eca09f7e774",
+				"correct": false,
+				"answer": "The `file` module can be used to manage users in Ansible."
+			},
+			{
+				"_id": "3cd27b89-c509-7d09-6617-2e38719ddf52",
+				"correct": true,
+				"answer": "The `template` module can be used to generate files on a target host based on templates and variables."
+			},
+			{
+				"_id": "4b2d309d-f331-51ed-54a7-7321db264079",
+				"correct": true,
+				"answer": "The `copy` module can be used to copy files from the control node to a target host."
+			},
+			{
+				"_id": "c1864dd5-1624-9f7c-dae5-85442eaadfd5",
+				"correct": true,
+				"answer": "The `apt` module can be used to manage packages on Debian and Ubuntu systems."
+			},
+			{
+				"_id": "b67676f5-791c-526b-f05d-01d8a9083af7",
+				"correct": false,
+				"answer": "The `yum` module is used to manage packages on Debian-based systems."
+			},
+			{
+				"_id": "f994ca14-be75-8047-f2ea-2fd4893262c8",
+				"correct": false,
+				"answer": "The `systemd` module is used to manage user accounts on a Linux system."
+			},
+			{
+				"_id": "48fbeb46-3844-7857-29bb-58c89eefa5bc",
+				"correct": true,
+				"answer": "The `user` module is used to manage user accounts on a Linux system."
+			}
+		],
+		"guidance": "**Incorrect:** The `file` module can be used to manage users in Ansible.\n - Correct: The `file` module can be used to create, delete, or modify files and directories on a target host, while the `user` module can be used to manage users in Ansible.\n\n**Incorrect:** The `systemd` module is used to manage user accounts on a Linux system.\n - Correct: The `systemd` module can be used to manage Systemd units on a target host.\n \n**Incorrect:** The `yum` module is used to manage packages on Debian-based systems.\n - Correct: The `yum` module is used to manage packages on CentOS systems, not Debian-based systems.",
+		"showGuidanceAfterResponseOption": {
+			"type": "Attempts",
+			"passedFrom": 2
+		},
+		"maxAttemptsCount": 2,
+		"showExpectedAnswer": true,
+		"points": 20,
+		"incorrectPoints": 0,
+		"arePartialPointsAllowed": true,
+		"metadata": {
+			"tags": [
+				{
+					"name": "Assessment Type",
+					"value": "Multiple Choice"
+				}
+			],
+			"files": [],
+			"opened": []
+		},
+		"bloomsObjectiveLevel": "",
+		"learningObjectives": ""
+	}
+}

@@ -1,0 +1,55 @@
+{
+	"type": "multiple-choice",
+	"taskId": "multiple-choice-3697170239",
+	"source": {
+		"name": "Summative Assessment #3",
+		"showName": false,
+		"instructions": "Select the task below that will successfully create the `dir` directory with the `/home/codio/workspace/dir` file path.",
+		"multipleResponse": false,
+		"isRandomized": false,
+		"answers": [
+			{
+				"_id": "f1ebf817-58db-612f-5ddb-781ae814db64",
+				"correct": false,
+				"answer": "```yaml-hide-clipboard\n- name: Create dir directory\n  ansible.builtin.copy:\n    path: /home/codio/workspace/dir\n    state: directory\n``` \n"
+			},
+			{
+				"_id": "0600e81d-a75f-8751-40c7-523565bd4b17",
+				"correct": true,
+				"answer": "```yaml-hide-clipboard\n- name: Create dir directory\n  ansible.builtin.file:\n    path: /home/codio/workspace/dir\n    recurse: true\n    state: directory\n```"
+			},
+			{
+				"_id": "a305f9e5-c884-6272-6132-479fb7f5faa8",
+				"correct": false,
+				"answer": "```yaml-hide-clipboard\n- name: Create dir directory\n  ansible.builtin.template:\n    path: /home/codio/workspace/dir\n    recurse: true\n    state: directory\n```"
+			},
+			{
+				"_id": "3ad45536-2f09-4238-fa7b-9cd04b65eb2a",
+				"correct": false,
+				"answer": "```yaml-hide-clipboard\n- name: Create dir directory\n  ansible.builtin.file:\n    path: /home/codio/workspace/test_file\n    state: touch\n```"
+			}
+		],
+		"guidance": "The first selection incorrectly uses the `copy` module instead of the `file` module.\nThe second selection is correct because the `file` module can be used to create a directory by setting `state: directory`, and using `recursive: true` is good practice (in case the parent folder does not already exist).\nThe third answer choice is wrong because it incorrectly uses the `template` module in place of the `file` module. \nThe last answer choice is incorrect because it does not include `state: directory` which is required for the `file` module to create a directory. Using `state: touch` will create a file.",
+		"showGuidanceAfterResponseOption": {
+			"type": "Attempts",
+			"passedFrom": 2
+		},
+		"maxAttemptsCount": 2,
+		"showExpectedAnswer": true,
+		"points": 20,
+		"incorrectPoints": 0,
+		"arePartialPointsAllowed": false,
+		"metadata": {
+			"tags": [
+				{
+					"name": "Assessment Type",
+					"value": "Multiple Choice"
+				}
+			],
+			"files": [],
+			"opened": []
+		},
+		"bloomsObjectiveLevel": "",
+		"learningObjectives": ""
+	}
+}

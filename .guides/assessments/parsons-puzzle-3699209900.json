@@ -1,0 +1,31 @@
+{
+	"type": "parsons-puzzle",
+	"taskId": "parsons-puzzle-3699209900",
+	"source": {
+		"name": "Summative Assessment #5",
+		"showName": false,
+		"instructions": "Reorder the following lines of code to write a playbook that creates a group `admin_group`, then adds a pre-existing user to it named `soulrebel`. Our playbook should have privilege escalation set at the playbook level (global). We are applying the playbook to `all` hosts.\n\nNotes:\n - The user is being added to the `admin_group` and we do not want to remove them from any other groups to which they may belong.\n - Remember that Ansible executes tasks in order, so order here matters\n - As always, indentation matters.\n",
+		"initial": "---\n- name: Create group and add user\n  hosts: all\n  become: yes\n  tasks:\n    - name: Create admin_group\n      ansible.builtin.group:\n        name: admin_group\n        state: present\n    - name: Add soulrebel to admin_group\n      ansible.builtin.user:\n        name: soulrebel\n        groups: admin_group\n        append: yes",
+		"options": "{\"sortableId\":\"sortable\",\"max_wrong_lines\":10,\"exec_limit\":2500,\"can_indent\":true,\"x_indent\":20,\"lang\":\"en\",\"show_feedback\":true}",
+		"grader": "1",
+		"guidance": "The first section of our playbook begins with the name, followed by the hosts to which it is applied. The question also specifies that privilege escalation is set at the playbook level so it must be included here as well.\n\nThe first task creates the `admin_group` group using the group module. We specify the name of the group as `admin_group` and set the state parameter to present to ensure that the group is created.\n\nThe second task adds the `soulrebel` user to the `admin_group` group using the user module. We specify the name of the user as `soulrebel` and set the groups parameter to `admin_group` to add the user to the `admin_group` group. We also set the append parameter to yes to ensure that the user is added to the group without removing any other groups they may already belong to.",
+		"showGuidanceAfterResponseOption": {
+			"type": "Attempts",
+			"passedFrom": 3
+		},
+		"maxAttemptsCount": 3,
+		"points": 20,
+		"metadata": {
+			"tags": [
+				{
+					"name": "Assessment Type",
+					"value": "Parsons Puzzle"
+				}
+			],
+			"files": [],
+			"opened": []
+		},
+		"bloomsObjectiveLevel": "",
+		"learningObjectives": ""
+	}
+}
